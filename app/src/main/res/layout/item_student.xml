@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp"
+    android:gravity="center_vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="0dp"
+        android:layout_weight="0.4"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/text_main"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_weight="1.2"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_main"/>
+
+    <TextView
+        android:id="@+id/tvClass"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/text_main"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvAttend"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/text_main"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_height="24dp"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@drawable/bg_status_present"
+        android:layout_marginHorizontal="4dp"/>
+
+</LinearLayout>
