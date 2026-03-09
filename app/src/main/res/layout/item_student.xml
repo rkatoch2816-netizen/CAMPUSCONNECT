@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:paddingVertical="10dp"
     android:gravity="center_vertical"
-    android:background="@color/white">
+    android:background="@android:color/transparent">
 
     <TextView
         android:id="@+id/tvId"
@@ -13,7 +13,7 @@
         android:layout_weight="0.4"
         android:layout_height="wrap_content"
         android:textSize="12sp"
-        android:textColor="@color/text_main"
+        android:textColor="#FFFFFF"
         android:gravity="center"/>
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:textSize="12sp"
         android:textStyle="bold"
-        android:textColor="@color/text_main"/>
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/tvClass"
@@ -31,7 +31,7 @@
         android:layout_weight="0.6"
         android:layout_height="wrap_content"
         android:textSize="12sp"
-        android:textColor="@color/text_main"
+        android:textColor="#BBBBBB"
         android:gravity="center"/>
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_weight="0.8"
         android:layout_height="wrap_content"
         android:textSize="12sp"
-        android:textColor="@color/text_main"
+        android:textColor="#BBBBBB"
         android:gravity="center"/>
 
     <TextView

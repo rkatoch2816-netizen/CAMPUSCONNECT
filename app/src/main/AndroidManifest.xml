@@ -27,6 +27,7 @@
         <activity android:name=".NoticeDetailActivity" />
         <activity android:name=".AttendanceActivity" />
         <activity android:name=".FeesActivity" />
+        <activity android:name="com.campusconnect.officeDashboard.OfficeDashboardActivity" />
 
     </application>
 

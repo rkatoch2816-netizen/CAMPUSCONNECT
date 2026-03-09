@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notice Title"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/etNoticeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Enter title (e.g. Holiday)"
+        android:background="@android:drawable/editbox_background"
+        android:paddingHorizontal="10dp"
+        android:layout_marginBottom="15dp"
+        android:inputType="textCapSentences"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/etNoticeDesc"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="Enter notice details..."
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="4"/>
+
+</LinearLayout>

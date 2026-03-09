@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#000000"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,64 +12,83 @@
         android:padding="24dp"
         android:gravity="center">
 
+        <!-- Logo Section -->
         <ImageView
             android:id="@+id/ivLogo"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="280dp"
+            android:layout_height="220dp"
             android:src="@drawable/logo"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:scaleType="centerInside"/>
+
+        <!-- Brand Name matching the image style -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CampusConnect"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="#007bff"
+            android:layout_marginTop="-20dp"
+            android:fontFamily="sans-serif-condensed"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Campus Connect Login"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:textColor="#1A237E"/>
+            android:text="Sign in to continue"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#888888"/>
 
+        <!-- Input Fields -->
         <AutoCompleteTextView
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Username or Email"
-            android:layout_marginTop="30dp"
+            android:layout_height="55dp"
+            android:hint="Email Address"
+            android:layout_marginTop="40dp"
             android:background="@drawable/edittext_bg"
             android:padding="12dp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textColorHint="#757575"
             android:completionThreshold="1"/>
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:hint="Password"
             android:inputType="textPassword"
             android:layout_marginTop="16dp"
             android:background="@drawable/edittext_bg"
             android:padding="12dp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textColorHint="#757575"/>
 
-        <CheckBox
-            android:id="@+id/cbRememberMe"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginTop="8dp"
-            android:text="Remember Me"
-            android:textColor="#1A237E"/>
+            android:layout_marginTop="8dp">
+
+            <CheckBox
+                android:id="@+id/cbRememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember Me"
+                android:buttonTint="#007bff"
+                android:textColor="#BBBBBB"/>
+        </RelativeLayout>
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Login"
+            android:layout_height="55dp"
+            android:text="LOGIN"
+            android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#1A237E"/>
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#007bff"
+            android:elevation="4dp"/>
 
     </LinearLayout>
 </ScrollView>

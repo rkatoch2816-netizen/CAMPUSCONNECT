@@ -4,7 +4,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FB">
+    android:background="#000000">
 
     <!-- Content Area -->
     <LinearLayout
@@ -12,20 +12,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Top Header -->
+        <!-- Top Header (Navy Blue) -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:background="@color/white"
-            android:elevation="2dp">
+            android:background="#000080"
+            android:elevation="4dp">
 
             <ImageView
                 android:id="@+id/btnMenu"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@android:drawable/ic_menu_sort_by_size"
-                app:tint="@color/sidebar_blue"
+                app:tint="@color/white"
                 android:layout_centerVertical="true"
                 android:padding="4dp"
                 android:clickable="true"
@@ -39,17 +39,19 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center">
                 <TextView
+                    android:id="@+id/tvTeacherWelcome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Campus Connect"
-                    android:textColor="@color/sidebar_blue"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"/>
                 <TextView
+                    android:id="@+id/tvTodayDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Teacher Dashboard"
-                    android:textColor="@color/text_main"
+                    android:text="Date: 25 May 2024"
+                    android:textColor="#BBBBBB"
                     android:textSize="14sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -80,24 +82,38 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- Class Dropdown Section -->
+                <!-- Class Dropdown & Subject Section -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="#1A1A1A"
+                    app:strokeColor="#333333"
+                    app:strokeWidth="1dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvTeacherSubject"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Subject: Select a Class"
+                            android:textStyle="bold"
+                            android:textColor="#007bff"
+                            android:textSize="16sp"
+                            android:layout_marginBottom="12dp"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Select Class"
                             android:textStyle="bold"
-                            android:textColor="@color/text_main"
+                            android:textColor="#FFFFFF"
                             android:textSize="15sp"
                             android:layout_marginBottom="8dp"/>
                         <Spinner
@@ -105,100 +121,109 @@
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:background="@android:drawable/btn_dropdown"
+                            android:backgroundTint="#FFFFFF"
                             android:spinnerMode="dropdown" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Middle Section -->
-                <LinearLayout
+                <!-- Attendance Management -->
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- Attendance Management -->
-                    <com.google.android.material.card.MaterialCardView
+                    android:layout_marginBottom="20dp"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="#1A1A1A"
+                    app:strokeColor="#333333"
+                    app:strokeWidth="1dp">
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        app:cardElevation="2dp"
-                        app:cardCornerRadius="8dp">
-                        <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-                            <RelativeLayout
-                                android:layout_width="match_parent"
+                            android:layout_marginBottom="16dp">
+                            <TextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Attendance Management"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/text_main"
-                                    android:textSize="15sp"/>
-                                <Button
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="32dp"
-                                    android:text="Mark Attendance"
-                                    android:textSize="10sp"
-                                    android:layout_alignParentEnd="true"
-                                    android:backgroundTint="@color/sidebar_blue"
-                                    android:paddingHorizontal="8dp"
-                                    android:textAllCaps="false"/>
-                            </RelativeLayout>
-                            <LinearLayout
-                                android:id="@+id/studentContainer"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                                android:text="Attendance Management"
+                                android:textStyle="bold"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"/>
+                            <Button
+                                android:id="@+id/btnSubmitAttendance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:text="Submit All"
+                                android:textSize="10sp"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTint="#007bff"
+                                android:paddingHorizontal="12dp"
+                                android:textAllCaps="false"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:id="@+id/studentContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Notice Board -->
-                    <com.google.android.material.card.MaterialCardView
+                <!-- Notice Board Section -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="#1A1A1A"
+                    app:strokeColor="#333333"
+                    app:strokeWidth="1dp">
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="2dp"
-                        app:cardCornerRadius="8dp">
-                        <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
+                            android:layout_marginBottom="12dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Notice Board"
                                 android:textStyle="bold"
-                                android:textColor="@color/text_main"
-                                android:textSize="15sp"
-                                android:layout_marginBottom="12dp"/>
-                            <LinearLayout
-                                android:id="@+id/noticeContainer"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"/>
 
-                </LinearLayout>
+                            <!-- Add Notice Button -->
+                            <Button
+                                android:id="@+id/btnAddNotice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="+ Add Notice"
+                                android:textSize="10sp"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTint="#007bff"
+                                android:paddingHorizontal="8dp"
+                                android:textAllCaps="false"/>
+                        </RelativeLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Attendance &amp; Notice Management Dashboard\n(For Teachers)"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="11sp"
-                    android:gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="20dp"/>
+                        <LinearLayout
+                            android:id="@+id/noticeContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
 
-    <!-- Sliding Sidebar (Drawer) -->
+    <!-- Sliding Sidebar -->
     <include
         layout="@layout/sidebar"
         android:layout_width="260dp"
