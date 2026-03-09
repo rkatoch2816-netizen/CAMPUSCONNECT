@@ -2,246 +2,175 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="#000000"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Title -->
+    <!-- Title Bar -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Student Attendance"
+        android:text="Attendance Report"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
         android:padding="15dp"
-        android:background="#3F51B5" />
+        android:background="#000080" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- VB.Net Card -->
+            <!-- Subject 1 Card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="#FFFFFF"
+                android:layout_marginTop="10dp"
+                android:background="#1A1A1A"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:elevation="6dp">
+                android:elevation="4dp">
 
                 <TextView
+                    android:id="@+id/tvSubject1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Subject: VB.Net"
-                    android:textColor="#000000"
+                    android:text="Subject 1"
+                    android:textColor="#007bff"
                     android:textStyle="bold"
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/tvTotal1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Classes: 20"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
+                    android:text="Total Classes: 65"
+                    android:textSize="14sp"
+                    android:textColor="#BBBBBB"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/txtPercentage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="36sp"
                     android:textStyle="bold"
+                    android:textColor="#007bff"
                     android:layout_marginTop="10dp" />
 
                 <TextView
+                    android:id="@+id/tvStats1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Classes Attended: 16"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
-
-                <TextView
-                    android:id="@+id/txtPercentageVB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="80%"
-                    android:textSize="40sp"
-                    android:textStyle="bold"
-                    android:textColor="#2E7D32"
-                    android:layout_marginTop="20dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="✔ Present: 16"
-                        android:textStyle="bold"
-                        android:textColor="#2E7D32"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="✘ Absent: 4"
-                        android:textStyle="bold"
-                        android:textColor="#D32F2F"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:text="Present: 0 | Absent: 65"
+                    android:textColor="#999999"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"/>
             </LinearLayout>
 
-            <!-- Computer Graphics Card -->
+            <!-- Subject 2 Card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:background="#1A1A1A"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:elevation="6dp">
+                android:elevation="4dp">
 
                 <TextView
+                    android:id="@+id/tvSubject2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Subject: Computer Graphics"
-                    android:textColor="#000000"
+                    android:text="Subject 2"
+                    android:textColor="#007bff"
                     android:textStyle="bold"
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/tvTotal2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Classes: 20"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
+                    android:text="Total Classes: 65"
+                    android:textSize="14sp"
+                    android:textColor="#BBBBBB"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/txtPercentage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="36sp"
                     android:textStyle="bold"
+                    android:textColor="#007bff"
                     android:layout_marginTop="10dp" />
 
                 <TextView
+                    android:id="@+id/tvStats2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Classes Attended: 15"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
-
-                <TextView
-                    android:id="@+id/txtPercentageCG"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="75%"
-                    android:textSize="40sp"
-                    android:textStyle="bold"
-                    android:textColor="#2E7D32"
-                    android:layout_marginTop="20dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="✔ Present: 15"
-                        android:textStyle="bold"
-                        android:textColor="#2E7D32"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="✘ Absent: 5"
-                        android:textStyle="bold"
-                        android:textColor="#D32F2F"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:text="Present: 0 | Absent: 65"
+                    android:textColor="#999999"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"/>
             </LinearLayout>
 
-            <!-- E-commerce Card -->
+            <!-- Subject 3 Card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="20dp"
-                android:background="#FFFFFF"
+                android:background="#1A1A1A"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:elevation="6dp">
+                android:elevation="4dp">
 
                 <TextView
+                    android:id="@+id/tvSubject3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Subject: E-commerce"
-                    android:textColor="#000000"
+                    android:text="Subject 3"
+                    android:textColor="#007bff"
                     android:textStyle="bold"
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/tvTotal3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Classes: 20"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
+                    android:text="Total Classes: 65"
+                    android:textSize="14sp"
+                    android:textColor="#BBBBBB"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/txtPercentage3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="36sp"
                     android:textStyle="bold"
+                    android:textColor="#007bff"
                     android:layout_marginTop="10dp" />
 
                 <TextView
+                    android:id="@+id/tvStats3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Classes Attended: 09"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
-
-                <TextView
-                    android:id="@+id/txtPercentageEC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="45%"
-                    android:textSize="40sp"
-                    android:textStyle="bold"
-                    android:textColor="#D32F2F"
-                    android:layout_marginTop="20dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="✔ Present: 09"
-                        android:textStyle="bold"
-                        android:textColor="#2E7D32"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="✘ Absent: 11"
-                        android:textStyle="bold"
-                        android:textColor="#D32F2F"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:text="Present: 0 | Absent: 65"
+                    android:textColor="#999999"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"/>
             </LinearLayout>
 
         </LinearLayout>

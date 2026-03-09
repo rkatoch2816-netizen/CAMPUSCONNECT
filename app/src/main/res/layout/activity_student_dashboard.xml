@@ -3,286 +3,265 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F7FF">
+    android:background="#000000">
 
-    <!-- Header Section -->
+    <!-- Top Profile/Header Section (Navy Blue) -->
     <RelativeLayout
-        android:id="@+id/header"
+        android:id="@+id/headerSection"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#1A73E8"
-        android:paddingHorizontal="16dp">
+        android:layout_height="180dp"
+        android:background="#000080"
+        android:padding="20dp">
 
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/logo"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
 
-        <!-- Logout Button - Power Icon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome,"
+                android:textColor="#BBBBBB"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ritika Katoch!"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Logout Button - Moved slightly for better touch area -->
         <ImageView
-            android:id="@+id/btnLogout"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:id="@+id/btnStudentLogout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@android:drawable/ic_lock_power_off"
-            app:tint="#FFFFFF"
-            android:padding="10dp"
+            android:layout_alignParentTop="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:elevation="4dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CampusConnect"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_toEndOf="@id/ivLogo"
-            android:layout_toStartOf="@id/btnLogout"
-            android:layout_marginStart="10dp"
-            android:layout_centerVertical="true"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            android:padding="10dp"
+            android:src="@android:drawable/ic_lock_power_off"
+            android:elevation="10dp"
+            app:tint="#FF5252" />
 
     </RelativeLayout>
 
+    <!-- Options Container -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header">
+        android:layout_below="@id/headerSection"
+        android:layout_marginTop="-40dp"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome, Ritika Katoch!"
-                android:textColor="#1A237E"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp"/>
-
-            <!-- Main Attendance Card -->
-            <LinearLayout
+            <!-- Attendance Summary Card -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/card_bg"
-                android:elevation="4dp"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A1A1A"
+                app:strokeColor="#333333"
+                app:strokeWidth="1dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Auto-Calculate Attendance"
-                    android:textColor="#1A237E"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-
-                <View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#E0E0E0"
-                    android:layout_marginVertical="12dp"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quick Attendance Summary"
+                        android:textColor="#BBBBBB"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:id="@+id/tvAttendancePercent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:textColor="#007bff"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPresentAbsent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvAttendancePercent"
+                            android:text="Loading attendance..."
+                            android:textColor="#999999"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Attendance Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnAttendanceView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#1A1A1A"
+                app:strokeColor="#333333"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ProgressBar
-                        android:id="@+id/attendanceProgress"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:indeterminate="false"
-                        android:max="100"
-                        android:progress="85"
-                        android:progressDrawable="@android:drawable/progress_horizontal" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/attendanceProgress"
-                        android:layout_marginStart="20dp"
-                        android:layout_centerVertical="true"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="85%"
-                            android:textColor="#1A237E"
-                            android:textSize="32sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Attendance"
-                            android:textColor="#757575"
-                            android:textSize="16sp"/>
-                    </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
 
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:id="@+id/iconAttendance"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_menu_my_calendar"
+                        app:tint="#007bff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/iconAttendance"
+                        android:text="Attendance Tracker"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@android:drawable/ic_menu_today"
-                        app:tint="#1A73E8"/>
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="#444444" />
                 </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Present: 34 Days | Absent: 6 Days"
-                    android:textColor="#757575"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-
-            <!-- Grid of 3 Cards -->
-            <LinearLayout
+            <!-- Fees Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnFeesView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="3">
+                android:layout_height="100dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#1A1A1A"
+                app:strokeColor="#333333"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true">
 
-                <!-- Attendance Tracker -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/card_bg"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Attendance\nTracker"
-                        android:gravity="center"
-                        android:textColor="#1A237E"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginVertical="10dp"
-                        android:src="@android:drawable/ic_menu_my_calendar"
-                        app:tint="#1A73E8"/>
-                    <Button
-                        android:id="@+id/btnAttendanceView"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:backgroundTint="#1A73E8"
-                        android:text="View"
-                        android:textSize="10sp"
-                        android:padding="0dp"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
 
-                <!-- Fees Details -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="4dp"
-                    android:background="@drawable/card_bg"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fees\nDetails"
-                        android:gravity="center"
-                        android:textColor="#1A237E"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="₹12,500"
-                        android:layout_marginTop="5dp"
-                        android:textColor="#2E7D32"
-                        android:textStyle="bold"
-                        android:textSize="14sp"/>
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginVertical="5dp"
+                        android:id="@+id/iconFees"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
                         android:src="@android:drawable/ic_menu_save"
-                        app:tint="#FFC107"/>
-                    <Button
-                        android:id="@+id/btnFeesView"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:backgroundTint="#1A73E8"
-                        android:text="View Fees"
-                        android:textSize="10sp"
-                        android:padding="0dp"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
+                        app:tint="#F9A825" />
 
-                <!-- Campus Notices -->
-                <LinearLayout
-                    android:id="@+id/btnNotice"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/card_bg"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="10dp"
-                    android:clickable="true"
-                    android:focusable="true">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Campus\nNotices"
-                        android:gravity="center"
-                        android:textColor="#1A237E"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginVertical="10dp"
-                        android:src="@android:drawable/ic_menu_info_details"
-                        app:tint="#1A73E8"/>
-                    <Button
-                        android:id="@+id/btnViewNotice"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:backgroundTint="#1A73E8"
-                        android:text="Notices"
-                        android:textSize="10sp"
-                        android:padding="0dp"
-                        android:textAllCaps="false"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/iconFees"
+                        android:text="Fees Details"
                         android:textColor="#FFFFFF"
-                        android:clickable="false"/>
-                </LinearLayout>
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="#444444" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Notices Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnNotice"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#1A1A1A"
+                app:strokeColor="#333333"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/iconNotice"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        app:tint="#2E7D32" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/iconNotice"
+                        android:text="Campus Notices"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_media_play"
+                        app:tint="#444444" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>
